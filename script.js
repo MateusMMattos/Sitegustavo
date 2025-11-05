@@ -6,10 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('main section');
     const fadeElements = document.querySelectorAll('.fade-in');
-
-    // ===================================
-    // 1. HEADER COM SOMBRA NO SCROLL
-    // ===================================
     const handleScroll = () => {
         if (window.scrollY > 10) {
             header.classList.add('scrolled');
@@ -18,16 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Verifica no carregamento da página
-
-    // ===================================
-    // 2. FUNCIONALIDADE DO MENU MOBILE
-    // ===================================
+    handleScroll();
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             menuToggle.classList.toggle('active');
-            // Impede o scroll da página quando o menu está aberto
             document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
         });
 
@@ -41,13 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-    // ===================================
-    // 3. SCROLL-SPY (DESTAQUE DO MENU)
-    // ===================================
     const optionsScrollSpy = {
         root: null,
-        rootMargin: '-40% 0px -60% 0px', // Ativa no meio da tela
+        rootMargin: '-40% 0px -60% 0px',
         threshold: 0
     };
 
@@ -67,12 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         scrollObserver.observe(section);
     });
-
-    // ===================================
-    // 4. ANIMAÇÕES DE FADE-IN AO ROLAR
-    // ===================================
     const optionsFadeIn = {
-        threshold: 0.1 // Ativa com 10% visível
+        threshold: 0.1
     };
 
     const fadeObserver = new IntersectionObserver((entries, observer) => {

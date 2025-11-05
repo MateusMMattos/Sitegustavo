@@ -1,51 +1,38 @@
-/* =========================================
-   1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
-   ========================================= */
 :root {
-    /* Paleta de Cores Refinada */
-    --cor-primaria: #0D2C4B; /* Azul Marinho Profundo */
-    --cor-primaria-dark: #071A2E; /* Sombra do Azul */
-    --cor-cta: #00C896; /* Verde Moderno e Vibrante */
+    --cor-primaria: #0D2C4B;
+    --cor-primaria-dark: #071A2E;
+    --cor-cta: #00C896;
     --cor-cta-hover: #00A37A;
     --cor-fundo: #FFFFFF;
-    --cor-fundo-alt: #F7F9FA; /* Cinza "Suave" */
+    --cor-fundo-alt: #F7F9FA;
     --cor-texto: #333333;
     --cor-texto-claro: #FFFFFF;
-    --cor-borda: #EAECEF; /* Borda sutil para cards */
-    --cor-amarelo: #FFC107; /* Estrelas */
-    --cor-urgencia: #D9534F; /* Vermelho */
+    --cor-borda: #EAECEF;
+    --cor-amarelo: #FFC107;
+    --cor-urgencia: #D9534F;
     
-    /* --- MELHORIA DO HERO (Adicionada) --- */
-    --cor-acento-premium: #EAE3D9; /* Cor de acento, inspirada no logo */
-    --cor-texto-hero-p: rgba(255, 255, 255, 0.9); /* Cor do parágrafo da hero */
+    --cor-acento-premium: #EAE3D9;
+    --cor-texto-hero-p: rgba(255, 255, 255, 0.9);
 
-    /* Tipografia Profissional */
     --font-heading: 'Merriweather', serif;
     --font-body: 'Montserrat', sans-serif;
 
-    /* Espaçamento (Base 8px) */
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 32px;
     --spacing-xl: 48px;
     --spacing-xxl: 64px;
 
-    /* Sombra Profissional */
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
 
-    /* Outros */
     --header-height: 70px;
     --border-radius: 8px;
     
-    /* Transição Otimizada */
     --transition-speed: 0.3s;
     --transition-ease: ease-in-out;
 }
 
-/* =========================================
-   2. RESET E BASE
-   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -73,9 +60,6 @@ body {
     padding: 0 var(--spacing-lg);
 }
 
-/* =========================================
-   3. TIPOGRAFIA (COM FLUIDEZ)
-   ========================================= */
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
     color: var(--cor-primaria);
@@ -84,7 +68,6 @@ h1, h2, h3, h4 {
     font-weight: 700;
 }
 
-/* Tipografia Fluida com clamp() */
 h1 { font-size: clamp(3rem, 5vw + 1rem, 3.5rem); }
 h2 { font-size: clamp(2rem, 4vw + 1rem, 2.5rem); text-align: center; }
 h3 { font-size: clamp(1.25rem, 2vw + 0.5rem, 1.5rem); }
@@ -104,9 +87,6 @@ p.subtitle {
     font-weight: 500;
 }
 
-/* =========================================
-   4. BOTÕES DE CTA (REFINADOS)
-   ========================================= */
 .cta-button {
     display: inline-block;
     padding: var(--spacing-md) var(--spacing-lg);
@@ -142,9 +122,6 @@ p.subtitle {
     padding: 18px 40px;
 }
 
-/* =========================================
-   5. HEADER E NAVEGAÇÃO (COM FUNDO BRANCO)
-   ========================================= */
 .header {
     height: var(--header-height);
     position: fixed;
@@ -152,9 +129,8 @@ p.subtitle {
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: var(--cor-fundo); /* Fundo branco */
+    background-color: var(--cor-fundo);
     transition: box-shadow var(--transition-speed) var(--transition-ease);
-    /* A sombra é controlada pelo JS (classe .scrolled) */
 }
 
 .header.scrolled {
@@ -173,7 +149,7 @@ p.subtitle {
     display: inline-block;
 }
 .logo img {
-    height: 45px; /* Altura do seu logo */
+    height: 45px;
     width: auto;
     vertical-align: middle;
     object-fit: contain;
@@ -187,7 +163,7 @@ p.subtitle {
     margin-left: var(--spacing-lg);
 }
 .nav-links a {
-    color: var(--cor-texto); /* Links com cor de texto padrão */
+    color: var(--cor-texto);
     text-decoration: none;
     font-weight: 700;
     padding: 5px 0;
@@ -197,11 +173,10 @@ p.subtitle {
 }
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--cor-primaria); /* Destaque azul */
+    color: var(--cor-primaria);
     border-bottom-color: var(--cor-primaria);
 }
 
-/* Botão do Header (Ghost Button) */
 .cta-button-nav {
     font-weight: 700;
     padding: 10px 24px;
@@ -220,7 +195,6 @@ p.subtitle {
     transform: translateY(-2px);
 }
 
-/* Menu Mobile (Hamburguer) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -229,30 +203,24 @@ p.subtitle {
 .menu-toggle span {
     height: 3px;
     width: 25px;
-    background: var(--cor-primaria); /* Ícone hamburguer azul/escuro */
+    background: var(--cor-primaria);
     margin-bottom: 4px;
     border-radius: 2px;
     transition: transform var(--transition-speed) var(--transition-ease),
                 opacity var(--transition-speed) var(--transition-ease);
 }
 
-/* =========================================
-   6. SEÇÕES
-   ========================================= */
 section {
-    /* Espaçamento de seção fluido */
     padding: clamp(var(--spacing-xl), 8vw, var(--spacing-xxl)) 0;
 }
 section:nth-of-type(odd) {
     background-color: var(--cor-fundo-alt);
 }
 
-/* --- SEÇÃO HERO (REFINADA) --- */
 .hero-section {
-    background-color: var(--cor-primaria); /* Fundo azul sólido (correto) */
+    background-color: var(--cor-primaria);
     color: var(--cor-texto-claro);
     text-align: center;
-    /* Padding ajustado para o header fixo */
     padding-top: calc(var(--header-height) + var(--spacing-xl)); 
     padding-bottom: var(--spacing-xl);
     min-height: 70vh;
@@ -267,17 +235,16 @@ section:nth-of-type(odd) {
 }
 .hero-content h1 {
     font-size: clamp(2.8rem, 5vw + 1rem, 3.5rem);
-    color: var(--cor-texto-claro); /* Branco puro */
+    color: var(--cor-texto-claro);
     font-weight: 900;
-    /* Sombra sutil para "saltar" da tela */
     text-shadow: 0 2px 4px rgba(0,0,0,0.2); 
 }
 .hero-content h2 {
     font-size: clamp(1.5rem, 4vw + 0.5rem, 2rem);
-    color: var(--cor-acento-premium); /* Cor bege/creme do logo */
-    margin-top: -10px; /* Ajuste leve */
+    color: var(--cor-acento-premium);
+    margin-top: -10px;
     font-weight: 700;
-    margin-bottom: var(--spacing-md); /* Espaço antes do parágrafo */
+    margin-bottom: var(--spacing-md);
 }
 .hero-content p {
     font-size: clamp(1.1rem, 2vw + 0.5rem, 1.25rem);
@@ -285,10 +252,8 @@ section:nth-of-type(odd) {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    color: var(--cor-texto-hero-p); /* Branco suave */
+    color: var(--cor-texto-hero-p);
 }
-
-/* --- SEÇÃO DIREITO (COM VÍDEO 500x500) --- */
 .section-direito .container {
     display: flex;
     flex-wrap: wrap;
@@ -301,19 +266,14 @@ section:nth-of-type(odd) {
 }
 .video-responsive-container {
     position: relative;
-    /* MUDANÇA: Define o tamanho máximo */
     width: 500px; 
-    /* Garante que não quebre em telas pequenas */
     max-width: 100%; 
-    /* MUDANÇA: Define a proporção 1:1 (quadrado) */
     aspect-ratio: 1 / 1; 
     
     overflow: hidden;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
-    background-color: #000; /* Fundo preto para o vídeo */
-    
-    /* Centraliza o vídeo na coluna */
+    background-color: #000;
     margin-left: auto;
     margin-right: auto;
 }
@@ -324,7 +284,7 @@ section:nth-of-type(odd) {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que o vídeo cubra o espaço 1:1 */
+    object-fit: cover;
 }
 
 .sumula-box {
@@ -336,7 +296,6 @@ section:nth-of-type(odd) {
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
-/* --- SEÇÃO ESPECIALISTA --- */
 .section-especialista .container {
     display: flex;
     flex-wrap: wrap;
@@ -372,7 +331,6 @@ section:nth-of-type(odd) {
     display: block;
 }
 
-/* --- SEÇÃO DEPOIMENTOS (PROFISSIONAL) --- */
 .section-depoimentos {
     background-color: var(--cor-primaria-dark);
     color: var(--cor-texto-claro);
@@ -423,7 +381,6 @@ section:nth-of-type(odd) {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* --- SEÇÃO COMO FUNCIONA --- */
 .section-como-funciona {
     text-align: center;
 }
@@ -459,7 +416,6 @@ section:nth-of-type(odd) {
     margin: 0 auto var(--spacing-md) auto;
 }
 
-/* --- SEÇÃO CTA FINAL --- */
 .section-cta-final {
     text-align: center;
     background-color: var(--cor-fundo);
@@ -474,9 +430,6 @@ section:nth-of-type(odd) {
     margin-top: var(--spacing-md);
 }
 
-/* =========================================
-   7. RODAPÉ (PROFISSIONAL)
-   ========================================= */
 .footer {
     background-color: var(--cor-primaria-dark);
     color: rgba(255, 255, 255, 0.7);
@@ -569,9 +522,6 @@ section:nth-of-type(odd) {
     color: var(--cor-urgencia);
 }
 
-/* =========================================
-   8. RESPONSIVIDADE
-   ========================================= */
 @media (max-width: 992px) {
     .especialista-img { 
         max-width: 300px; 
