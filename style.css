@@ -162,38 +162,25 @@ p.subtitle {
 .nav-links li {
     margin-left: var(--spacing-lg);
 }
+
 .nav-links a {
     color: var(--cor-texto);
     text-decoration: none;
     font-weight: 700;
-    padding: 5px 0;
+    padding: 10px 0; /* Padding revertido para links de texto */
     border-bottom: 2px solid transparent;
     transition: color var(--transition-speed) var(--transition-ease),
                 border-bottom-color var(--transition-speed) var(--transition-ease);
 }
+
+/* Seletor simplificado (sem o :not()) */
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--cor-primaria);
     border-bottom-color: var(--cor-primaria);
 }
 
-.cta-button-nav {
-    font-weight: 700;
-    padding: 10px 24px;
-    border-radius: 50px;
-    background-color: transparent;
-    border: 2px solid var(--cor-cta);
-    color: var(--cor-cta);
-    transition: background-color var(--transition-speed) var(--transition-ease),
-                color var(--transition-speed) var(--transition-ease),
-                transform var(--transition-speed) var(--transition-ease);
-}
-.cta-button-nav:hover {
-    background-color: var(--cor-cta);
-    color: var(--cor-texto-claro) !important;
-    border-bottom: 2px solid var(--cor-cta);
-    transform: translateY(-2px);
-}
+/* ESTILOS DO BOTÃO .cta-button-nav FORAM REMOVIDOS */
 
 .menu-toggle {
     display: none;
@@ -572,12 +559,8 @@ section:nth-of-type(odd) {
         color: var(--cor-texto-claro);
         border-bottom-color: transparent;
     }
-    .cta-button-nav {
-        background-color: var(--cor-cta);
-        color: var(--cor-texto-claro) !important;
-        text-align: center;
-        border-color: var(--cor-cta);
-    }
+    
+    /* Regra .cta-button-nav removida daqui */
     
     .footer-grid { 
         text-align: center; 
