@@ -242,7 +242,10 @@ section.hero-section {
 }
 
 
-.hero-section .cta-primary {
+/* === ESTA É A CORREÇÃO === */
+/* Agora o botão do topo E o botão do final da página pulsarão */
+.hero-section .cta-primary,
+.section-cta-final .cta-large {
     animation: pulse 2s ease-in-out infinite;
 }
 
@@ -549,6 +552,7 @@ section.hero-section {
     width: auto;
     object-fit: contain;
 }
+
 .whatsapp-fab {
     position: fixed;
     bottom: 25px;
