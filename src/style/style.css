@@ -487,19 +487,34 @@ section.hero-section {
     color: var(--cor-texto-claro);
     padding-left: 5px;
 }
+
+.footer-social {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
 .footer-social a {
-    display: inline-block;
+    display: inline-flex;
     width: 40px;
     height: 40px;
-    line-height: 40px;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     background-color: var(--cor-primaria);
     color: var(--cor-texto-claro);
-    margin-right: var(--spacing-sm);
+    text-decoration: none;
     transition: background-color var(--transition-speed) var(--transition-ease),
                 transform var(--transition-speed) var(--transition-ease);
 }
+.footer-social a i {
+    margin: 0;
+    padding: 0;
+    line-height: 1; 
+    width: auto;
+}
+
 .footer-social a:hover {
     background-color: var(--cor-cta);
     transform: translateY(-2px);
@@ -507,7 +522,7 @@ section.hero-section {
 .footer-copyright {
     background-color: #000;
     color: #888;
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-sm) 0;
     text-align: center;
     font-size: 0.9rem;
 }
@@ -515,11 +530,13 @@ section.hero-section {
     color: var(--cor-urgencia);
 }
 
+.footer-copyright p {
+    margin-bottom: 0;
+}
 
-/* === CÓDIGO DA LOGO NO RODAPÉ === */
+
 .footer-copyright .developer-link {
     display: inline-block;
-    /* Linha modificada para -7px */
     vertical-align: -7px; 
     margin-left: 6px;
     transition: opacity var(--transition-speed) var(--transition-ease);
@@ -532,6 +549,41 @@ section.hero-section {
     width: auto;
     object-fit: contain;
 }
+.whatsapp-fab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
+    
+    background-color: var(--cor-cta);
+    color: var(--cor-texto-claro);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+    
+    animation: pulse 2s ease-in-out infinite;
+    transition: background-color var(--transition-speed) var(--transition-ease),
+                transform var(--transition-speed) var(--transition-ease);
+}
+
+.whatsapp-fab i {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.whatsapp-fab:hover {
+    background-color: var(--cor-cta-hover);
+    transform: scale(1.05);
+    animation-play-state: paused;
+}
+
 
 @keyframes pulse {
     0% {
@@ -606,8 +658,9 @@ section.hero-section {
     .footer-col ul { 
         padding-left: 0; 
     }
-    .footer-social { 
-        margin-top: var(--spacing-md); 
+    
+    .footer-social {
+        justify-content: center;
     }
     
 }
